@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {PahaModuleModule} from "./ph/paha-module/paha-module.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {PahaModuleModule} from "./ph/paha-module/paha-module.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PahaModuleModule
+    PahaModuleModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

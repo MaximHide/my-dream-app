@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -6,10 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
+  field;
+  color;
+  parentField;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.color='red';
+    this.parentField = 'parentField';
+  }
+
+  getDataFromButton(data: any) {
+    console.log(data);
+  }
+
+  changeColor(){
+    this.color='green'
+  }
+
+  getEventFromChild(event: any){
+    console.log(event);
   }
 
 }
