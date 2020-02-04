@@ -1,0 +1,7 @@
+:host {
+  display: table;
+  border: 1px solid black;
+  color: blue;
+  background-color: aqua;
+  font-style: italic;
+}
