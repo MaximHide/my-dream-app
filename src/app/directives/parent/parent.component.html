@@ -1,24 +1,13 @@
-<!--<p>parent works!</p>-->
-<!--<app-child [dataFromParent] = 'dataToChild'></app-child>-->
-<!--<button (click)="changeData()">MY button</button>-->
-<!--Hello world-->
-<!--{{field}} <br>-->
 
-<!--<button (click)="getDataFromButton('Hello Amigo')">Press button</button>-->
-
-
-<!--<input [(ngModel)]="field">-->
-
-
-<!--<button [style.color]="color" (click)="changeColor()">My button</button>-->
-Parent Html<br>
-
-<button mat-raised-button color="primary" (click)="changeDataParentField()">Parent button</button>
-
-<!--<app-child [childField]="parentField"></app-child>-->
+<app-child [dateFromAppHtml]="dateFromAnotherPlace" [tipe]="statusButton"
+ (changeStatusParent)="changeStatusButtonParent($event)"></app-child>
 
 <br>
+<button mat-raised-button color="warn" (mouseenter)="change= true"  (mouseleave)="change= false" (click)="statusChildButton()" disabled = {{parentButton}} >ParentButtonAddDataForChild</button>
 <br>
-<br>
-<app-child (childOutput)="getEventFromChild($event)"></app-child>
+<p>
 
+<div>
+  <span *ngIf="!change">{{dateFromAnotherPlace}}</span>
+  <span *ngIf="change">Good {{dateFromAnotherPlace}}</span>
+</div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -6,44 +6,31 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  dataToChild = 0;
-  field;
-  color;
-  parentField;
+  change: boolean;
+  @Input() dateFromAnotherPlace: string;
+  @Output() statusButton: boolean;
+  @Input() parentButton: boolean;
 
   constructor() {
+    this.change = false;
   }
 
   ngOnInit() {
-    this.field = 'Hello world';
-    this.color = 'red';
-    this.parentField = 'ParentField';
+    this.dateFromAnotherPlace = 'parent date';
+    this.parentButton = false;
+    this.statusButton = true;
   }
 
-
-  changeData() {
-    this.dataToChild += 1;
+  statusChildButton() {
+    this.statusButton = !this.statusButton;
   }
 
-
-  getDataFromButton(data: any) {
-    this.field = data;
-    console.log(data);
+  changeStatusButtonParent(event) {
+    if (this.parentButton === event) {
+      this.parentButton = !event;
+    } else {
+      this.parentButton = event;
+    }
   }
-
-
-  changeColor() {
-    this.color = 'green';
-  }
-
-
-  changeDataParentField() {
-    this.parentField = 'BLABLABLA';
-  }
-
-  getEventFromChild(event: any) {
-    console.log(event);
-  }
-
 
 }

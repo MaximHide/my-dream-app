@@ -1,11 +1,8 @@
-<!--<p>child works!</p>-->
+<button mat-raised-button color="primary" disabled={{tipe}} (mouseenter)="change= true" (mouseleave)="change =false" (click)="changeStatus()">
+  ChildButtonEmitEventForParent
+</button>
 
 <div>
-in Child
-
-{{childField}}
-<br>
-
-<button mat-raised-button color="warn" (click)="eventInChildOccured()">Child Button</button>
-
+  <span *ngIf="!change">{{dateFromAppHtml}}</span>
+  <span *ngIf="change">Good {{dateFromAppHtml}}</span>
 </div>

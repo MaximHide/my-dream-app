@@ -20,7 +20,8 @@ import {MatButtonToggleModule} from '@angular/material';
     MaterialModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

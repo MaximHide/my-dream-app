@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,28 +7,23 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange,
 })
 export class ChildComponent implements OnInit {
 
-  @Input() childField;
 
-  @Output() childOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-
-  // OnChanges
-  // @Input() dataFromParent;
+  @Input() dateFromAppHtml: string;
+  change: boolean;
+  @Input() tipe: boolean;
+  @Output() changeStatusParent = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit() {
+    this.dateFromAppHtml = 'child date';
+    this.change = false;
+    this.tipe = true;
   }
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   let a = changes.dataFromParent;
-  //   console.log(a);
-  // }
-
-
-  eventInChildOccured() {
-    // this.childOutput.emit(true);
-  }
+changeStatus() {
+      this.changeStatusParent.emit(true);
+}
 
 }
