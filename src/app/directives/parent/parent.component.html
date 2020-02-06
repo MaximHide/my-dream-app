@@ -1,0 +1,24 @@
+<!--<p>parent works!</p>-->
+<!--<app-child [dataFromParent] = 'dataToChild'></app-child>-->
+<!--<button (click)="changeData()">MY button</button>-->
+<!--Hello world-->
+<!--{{field}} <br>-->
+
+<!--<button (click)="getDataFromButton('Hello Amigo')">Press button</button>-->
+
+
+<!--<input [(ngModel)]="field">-->
+
+
+<!--<button [style.color]="color" (click)="changeColor()">My button</button>-->
+Parent Html<br>
+
+<button mat-raised-button color="primary" (click)="changeDataParentField()">Parent button</button>
+
+<!--<app-child [childField]="parentField"></app-child>-->
+
+<br>
+<br>
+<br>
+<app-child (childOutput)="getEventFromChild($event)"></app-child>
+
