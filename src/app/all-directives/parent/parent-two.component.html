@@ -1,0 +1,68 @@
+<p>parent works!</p>
+
+<mat-button-toggle (click)="clickButton()">Button Parent</mat-button-toggle>
+
+
+<app-child-one></app-child-one>
+<app-child-two></app-child-two>
+<app-child-three></app-child-three>
+
+
+<div *ngIf="this.books.length>0">
+  Data exist
+</div>
+<mat-button-toggle (click)="deleteAllBooks()">Delete all books</mat-button-toggle>
+
+<div *ngIf="this.books.length>0">
+
+  <table border="1">
+    <thead>
+    <tr>
+      <th>bookId</th>
+      <th>bookName</th>
+      <th>price</th>
+      <th>authorId</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let book of books">
+      <td>{{book.bookId}}</td>
+      <td>{{book.bookName}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.authorId}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<table border="1" *ngIf="this.books.length==0">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>№</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let author of authors; index as i">
+    <td>{{author.id}}</td>
+    <td>{{author.name}}</td>
+    <td>{{i}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+<div *ngIf="this.books.length==0; else elseBlock">Books == 0</div>
+
+<ng-template #elseBlock>Books > 0</ng-template>
+
+
+
+
+
