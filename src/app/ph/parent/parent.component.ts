@@ -6,28 +6,39 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  field;
-  color;
   parentField;
+  buttonColor;
+  isButtonClicked: boolean;
+  @Input() isButtonDisabled: boolean;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.color='red';
-    this.parentField = 'parentField';
+    this.parentField = 'Поле parentField із ParentComponent';
+    this.buttonColor = 'green';
+    this.isButtonClicked = false;
   }
 
-  getDataFromButton(data: any) {
-    console.log(data);
+  mouseEnterEventHandler() {
+    this.parentField = this.parentField + ' Good';
   }
 
-  changeColor(){
-    this.color='green'
+  mouseLeaveEventHandler() {
+    this.parentField = this.parentField.replace(' Good', '');
   }
 
-  getEventFromChild(event: any){
-    console.log(event);
+  buttonClickEventHandler() {
+    if (!this.isButtonClicked) {
+      this.parentField = this.parentField + ' Clicked';
+      this.isButtonClicked=true;
+    } else {
+      this.parentField = this.parentField.replace(' Clicked', '');
+      this.isButtonClicked=false;
+    }
   }
 
+  secondButtonClickEventHandler() {
+
+  }
 }

@@ -11,9 +11,10 @@ export class ChildComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.childField='Поле childField із ChildComponent'
   }
 
-  eventInChildOcured(){
+  eventInChildOccured(){
     this.childOutputField.emit(true);
   }
 

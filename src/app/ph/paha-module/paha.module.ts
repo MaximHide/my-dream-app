@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {ParentComponent} from "../parent/parent.component";
 import {ChildComponent} from "../child/child.component";
 import {FormsModule} from "@angular/forms";
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 
 @NgModule({
@@ -16,9 +18,11 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatButtonToggleModule
   ]
 })
-export class PahaModuleModule {
+export class PahaModule {
 
 }

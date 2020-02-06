@@ -1,17 +1,21 @@
-<p>parent works!</p>
-<button (click)="getDataFromButton(true)">Press button</button>
+<p>
+  <b>{{parentField}}
+  </b>
+</p>
 <br>
-<input [(ngModel)]=field>
-<br>
-{{field}}
-<br>
-<br>
-<br>
-<button [style.color]=color (click)="changeColor()">My button</button>
+<mat-button-toggle (mouseenter)="mouseEnterEventHandler()"
+                   (mouseleave)="mouseLeaveEventHandler()"
+                   (click)="buttonClickEventHandler()">
+  Parent Button
+</mat-button-toggle>
 
 <br>
+<mat-button-toggle [disabled]="isButtonDisabled"
+  (click)="secondButtonClickEventHandler()">
+  ParentButtonAddDataForChild
+</mat-button-toggle>
 <br>
 <br>
-<!--<app-child [childField]="parentField"></app-child>-->
-
-<app-child (childOutputField)="getEventFromChild($event)"></app-child>
+<br>
+<br>
+<app-child></app-child>
