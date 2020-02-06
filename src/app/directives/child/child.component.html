@@ -8,4 +8,14 @@ in Child
 
 <button mat-raised-button color="warn" (click)="eventInChildOccured()">Child Button</button>
 
+  <br>
+  <br>
+
+  {{newChildField}}
+  <br>
+  <button mat-raised-button color="primary" (mouseenter)="addGoodToNewChildField()" (mouseleave)="removeGoodFromNewChildField()" (click)="clickOnNewChildButton()">New Child Button</button>
+  <br>
+  <br>
+  <button mat-raised-button color="primary" disabled = {{childButtonStatus}} (click) = "changeParentButtonStatus()">ChildButtonEmitEventForParent</button>
+
 </div>

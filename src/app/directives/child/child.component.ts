@@ -7,9 +7,14 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange,
 })
 export class ChildComponent implements OnInit {
 
-  @Input() childField;
+newChildField;
+additionalChildWord = 'GOOD';
+childConst = 'newChildField is ';
 
-  @Output() childOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
+ // @Input() childField;
+  change: boolean;
+  @Input() childButtonStatus: boolean;
+  @Output() parentButtonStatus = new EventEmitter();
 
 
   // OnChanges
@@ -19,7 +24,42 @@ export class ChildComponent implements OnInit {
   }
 
   ngOnInit() {
+this.childConst;
+this.newChildField = this.childConst;
+this.additionalChildWord;
+this.childButtonStatus = true;
   }
+
+
+addGoodToNewChildField() {
+this.newChildField = this.newChildField + this.additionalChildWord;
+}
+
+removeGoodFromNewChildField() {
+this.newChildField = this.childConst;
+}
+
+
+clickOnNewChildButton() {
+if (this.newChildField.includes('Cklicked')) {
+this.newChildField = this.childConst;
+}
+else {
+this.newChildField = this.childConst + 'Cklicked';
+}
+}
+
+changeParentButtonStatus() {
+      this.parentButtonStatus.emit(true);
+
+}
+
+
+  getEventFromParent(event: any) {
+    console.log(event);
+  }
+
+
 
   // ngOnChanges(changes: SimpleChanges) {
   //   let a = changes.dataFromParent;

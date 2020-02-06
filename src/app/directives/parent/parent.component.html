@@ -16,9 +16,23 @@ Parent Html<br>
 <button mat-raised-button color="primary" (click)="changeDataParentField()">Parent button</button>
 
 <!--<app-child [childField]="parentField"></app-child>-->
+<br>
+<br>
+{{newParentField}}
+<br>
+<button mat-raised-button color="primary" (mouseenter)="addGoodToNewParentField()" (mouseleave)="removeGoodFromNewParentField()" (click)="clickOnNewParentButton()">New Parent button</button>
+<br>
+<br>
+<button mat-raised-button color="primary" (click)="clickOnParentButtonAddDataForChild()" disabled = {{parentButtonStatusInput}}>ParentButtonAddDataForChild</button>
+
+
 
 <br>
 <br>
 <br>
-<app-child (childOutput)="getEventFromChild($event)"></app-child>
+<app-child [childButtonStatus]="childButtonStatus" (childOutput)="getEventFromChild($event)" (parentButtonStatus)="changeParentButtonStatus($event)"></app-child>
+<br>
+
+
+
 
