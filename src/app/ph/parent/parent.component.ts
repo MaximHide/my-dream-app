@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChildComponent} from "../child/child.component";
 
 @Component({
   selector: 'app-parent',
@@ -10,6 +11,7 @@ export class ParentComponent implements OnInit {
   buttonColor;
   isButtonClicked: boolean;
   @Input() isButtonDisabled: boolean;
+  parentBooleanFiendToChild: boolean;
 
   constructor() {
   }
@@ -18,6 +20,7 @@ export class ParentComponent implements OnInit {
     this.parentField = 'Поле parentField із ParentComponent';
     this.buttonColor = 'green';
     this.isButtonClicked = false;
+    this.isButtonDisabled = false;
   }
 
   mouseEnterEventHandler() {
@@ -39,6 +42,10 @@ export class ParentComponent implements OnInit {
   }
 
   secondButtonClickEventHandler() {
+    this.parentBooleanFiendToChild = false;
+  }
 
+  childBooleanEventHandler(event: any){
+    this.isButtonDisabled = event;
   }
 }

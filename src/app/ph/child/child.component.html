@@ -2,12 +2,18 @@
   {{childField}}
 </b>
 <br>
+<mat-button-toggle (mouseenter)="mouseEnterEventHandler()"
+                   (mouseleave)="mouseLeaveEventHandler()"
+                   (click)="buttonClickEventHandler()">
+  Child Button
+</mat-button-toggle>
 <br>
-<br>
-<br>
-<b>
-  <mat-button-toggle (click)="eventInChildOccured()">Child Button</mat-button-toggle>
-</b>
+<mat-button-toggle [disabled]=isButtonDisabled
+                   [disableRipple]=isButtonDisabled
+                   (click)=eventInChild()>
+  ChildButtonEmitEventForParent
+</mat-button-toggle>
+
 
 
 
