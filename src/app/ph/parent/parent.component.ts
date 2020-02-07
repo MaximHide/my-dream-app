@@ -10,7 +10,7 @@ export class ParentComponent implements OnInit {
   parentField;
   buttonColor;
   isButtonClicked: boolean;
-  @Input() isButtonDisabled: boolean;
+  isButtonDisabled: boolean;
   parentBooleanFiendToChild: boolean;
 
   constructor() {

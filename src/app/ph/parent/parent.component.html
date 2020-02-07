@@ -1,23 +1,21 @@
 <p>
-  <b>{{parentField}}
-  </b>
+  <b>{{parentField}}</b>
 </p>
-<br>
-<mat-button-toggle (mouseenter)="mouseEnterEventHandler()"
-                   (mouseleave)="mouseLeaveEventHandler()"
-                   (click)="buttonClickEventHandler()">
-  Parent Button
-</mat-button-toggle>
-
-<br>
-<mat-button-toggle [disabled]="isButtonDisabled"
-                   (click)="secondButtonClickEventHandler()">
-  ParentButtonAddDataForChild
-</mat-button-toggle>
-<br>
-<br>
-<br>
-<br>
-<app-child [isButtonDisabled]=parentBooleanFiendToChild
-           (childBooleanEventEmitter)="childBooleanEventHandler($event)"
-></app-child>
+<p>
+  <button mat-raised-button color="primary" (mouseenter)="mouseEnterEventHandler()"
+          (mouseleave)="mouseLeaveEventHandler()"
+          (click)="buttonClickEventHandler()">
+    Parent Button
+  </button>
+</p>
+<p>
+  <button mat-raised-button color="accent" [disabled]=isButtonDisabled
+          (click)="secondButtonClickEventHandler()">
+    ParentButtonAddDataForChild
+  </button>
+</p>
+<p>
+  <app-child [isButtonDisabled]=parentBooleanFiendToChild
+             (childBooleanEventEmitter)="childBooleanEventHandler($event)">
+  </app-child>
+</p>

@@ -3,8 +3,8 @@ import {CommonModule} from '@angular/common';
 import {ParentComponent} from "../parent/parent.component";
 import {ChildComponent} from "../child/child.component";
 import {FormsModule} from "@angular/forms";
-import {MatTableModule} from "@angular/material/table";
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MaterialModule} from "../../material.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -19,8 +19,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
   imports: [
     CommonModule,
     FormsModule,
-    MatTableModule,
-    MatButtonToggleModule
+    BrowserAnimationsModule,
+    MaterialModule,
   ]
 })
 export class PahaModule {
