@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>Child Buttons</h3>
+  <div class="inside">
+    <button mat-raised-button color="accent"
+            [disabled]="clickEvent"
+            (mouseenter)="dataChange = true"
+            (mouseleave)="dataChange = false"
+            (click)="statusChangeEvent()">
+      Child btn for parent
+    </button>
+  </div>
+
+  <div class="input-field">
+      <span *ngIf="!dataChange">{{childData}}</span>
+      <span *ngIf="dataChange">{{childData}} + GOOD</span>
+  </div>
+
+</div>

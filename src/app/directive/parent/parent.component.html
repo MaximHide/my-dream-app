@@ -1,0 +1,23 @@
+<h3>Parent Buttons</h3>
+<div class="container">
+  <div class="inside">
+    <button mat-raised-button color="primary"
+            (mouseenter)="dataChange = true"
+            (mouseleave)="dataChange = false"
+            (click)="statusChildBtn()"
+            [disabled]="parentBtn">
+      Main Parent btn
+    </button>
+  </div>
+  <div class="input-field">
+      <span *ngIf="!dataChange">{{parentData}}</span>
+      <span *ngIf="dataChange">{{parentData}} + GOOD</span>
+  </div>
+</div>
+
+<hr>
+<h3>Child Component</h3>
+<app-child [childData]="parentData" [clickEvent]="statusBtn"
+           (changeStatusParent)="statusChangeEvent($event)">
+</app-child>
+
