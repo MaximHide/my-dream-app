@@ -9,7 +9,7 @@ import {ShowroomService} from '../showroom.service';
 })
 export class SecondSalonComponent implements OnInit {
   car: Array<Car> = [];
-  allAmount: number;
+  allAmount ;
 
   constructor(private service: ShowroomService) {
   }
@@ -20,11 +20,16 @@ export class SecondSalonComponent implements OnInit {
   }
 
   getTotalAmount() {
+    this.allAmount = 0;
     for (let i = 0; i < this.car.length; i++) {
-      console.log(this.car[i].amount);
+      console.log('from car + ' + this.car[i].amount);
+      console.log('AMOUNT + ' + this.allAmount);
       this.allAmount = this.allAmount + this.car[i].amount;
     }
+
+    return this.allAmount;
   }
+
 }
 
 

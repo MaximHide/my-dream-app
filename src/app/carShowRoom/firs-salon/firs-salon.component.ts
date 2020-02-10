@@ -10,7 +10,7 @@ import {ShowroomService} from '../showroom.service';
 export class FirsSalonComponent implements OnInit {
 
   car: Array<Car> = [];
-
+  allAmount;
   constructor(private service: ShowroomService) {
   }
 
@@ -18,10 +18,16 @@ export class FirsSalonComponent implements OnInit {
     this.car = this.service.getDataToShowRoom('1').car;
   }
 
-  getAllCardInSalon() {
-    this.car = this.service.getDataToShowRoom('1').car;
-    console.log(this.service.getDataToShowRoom('1'));
 
+  getTotalAmount() {
+    this.allAmount = 0;
+    for (let i = 0; i < this.car.length; i++) {
+      console.log('from car + ' + this.car[i].amount);
+      console.log('AMOUNT + ' + this.allAmount);
+      this.allAmount = this.allAmount + this.car[i].amount;
+    }
+
+    return this.allAmount;
   }
 
 }
