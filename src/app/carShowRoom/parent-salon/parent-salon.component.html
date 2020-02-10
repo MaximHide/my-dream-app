@@ -6,10 +6,8 @@
     <td>{{cars.model}}</td>
     <td>{{cars.color}}</td>
     <td>{{cars.amount}}</td>
-    <td>{{i}}</td>
-    <!--    <button (click)="deleteCar(i)">delete car</button>-->
-    <button (click)="setCarInSalon(cars, '1', i)">to salon A</button>
-    <button (click)="setCarInSalon(cars, '2', i)">to salon B</button>
+    <button mat-raised-button color="warn" (click)="setCarInSalon(cars, '1', i)">to salon A</button>
+    <button mat-raised-button color="primary" (click)="setCarInSalon(cars, '2', i)">to salon B</button>
   </tr>
 </table>
 <table border=2 *ngIf="car.length !=0; else goodDev">
