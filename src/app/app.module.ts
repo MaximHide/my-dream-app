@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonToggleModule} from '@angular/material';
+import {AutosaleModule} from "./autosale/autosale.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatButtonToggleModule} from '@angular/material';
     MaterialModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    AutosaleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
