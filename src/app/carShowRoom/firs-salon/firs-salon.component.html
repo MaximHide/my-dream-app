@@ -1,0 +1,9 @@
+<p>firs-salon works!</p>
+<!--<button (click)="getAllCardInSalon()">firs salon</button>-->
+<table border=1 *ngIf="car.length>0">
+  <tr *ngFor="let cars of car; Index as i">
+    <td>{{cars.model}}</td>
+    <td [ngStyle]="{'background-color': cars.color}">{{cars.color}}</td>
+    <td>{{cars.amount}}</td>
+  </tr>
+</table>

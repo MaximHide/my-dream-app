@@ -1,0 +1,26 @@
+<p>parent-salon works!</p>
+
+<table border=2 *ngIf="car.length>0">
+  <tr *ngFor="let cars of car; index as i">
+    <td>{{cars.id}}</td>
+    <td>{{cars.model}}</td>
+    <td>{{cars.color}}</td>
+    <td>{{cars.amount}}</td>
+    <td>{{i}}</td>
+    <!--    <button (click)="deleteCar(i)">delete car</button>-->
+    <button (click)="setCarInSalon(cars, '1', i)">to salon A</button>
+    <button (click)="setCarInSalon(cars, '2', i)">to salon B</button>
+  </tr>
+</table>
+<table border=2 *ngIf="car.length !=0; else goodDev">
+  <tr>
+    <td>
+      <app-firs-salon></app-firs-salon>
+    </td>
+    <td>
+      <app-second-salon></app-second-salon>
+    </td>
+  </tr>
+</table>
+
+<ng-template #goodDev>I am a cool angular developer</ng-template>

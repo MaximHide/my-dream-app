@@ -1,0 +1,14 @@
+<p>second-salon works!</p>
+
+<table border = 1 *ngIf="car.length>0">
+  <tr *ngFor="let cars of car">
+    <td>{{cars.model}}</td>
+    <td [ngStyle]="{'background-color': cars.color}">{{cars.color}}</td>
+    <td>{{cars.amount}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>total amount : </td>
+    <td>{{allAmount}}</td>
+  </tr>
+</table>
