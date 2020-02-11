@@ -1,52 +1,41 @@
 <p>general works!</p>
 
+<div *ngIf="cars.length==0">
+  <br>
+  I am a cool angular developer.
+</div>
+
+
+<div *ngIf="cars.length>0">
 <table border="1">
   <thead>
   <tr>
     <th>carId</th>
     <th>carModel</th>
     <th>carPrice</th>
-    <th>carColour</th>
+    <th>carColor</th>
     <th>Choose Salon</th>
   </tr>
   </thead>
-  <tbody>
 
-  <tr *ngFor="let car of cars">
+  <tbody>
+  <tr *ngFor="let car of cars; index as i">
     <td>{{car.carId}}</td>
     <td>{{car.carModel}}</td>
     <td>{{car.carPrice}}</td>
-    <td>{{car.carColour}}</td>
+    <td>{{car.carColor}}</td>
     <td>
-      <button style="margin:10px;">add to First</button>
-      <button style="margin:10px;">add to Second</button>
+      <button style="margin:10px;" (click)="addCarToSalon(car, 1, i)">add to First</button>
+      <button style="margin:10px;" (click)="addCarToSalon(car, 2, i)">add to Second</button>
     </td>
   </tr>
   </tbody>
 </table>
-
-<p>For information</p>
-
-<table border="1">
-  <thead>
-  <tr>
-    <th>salonId</th>
-    <th>salonAddress</th>
-  </tr>
-  </thead>
-  <tbody>
-
-  <tr *ngFor="let salon of salons">
-    <td>{{salon.salonId}}</td>
-    <td>{{salon.salonAddress}}</td>
-  </tr>
-  </tbody>
-</table>
-<br>
 
 <div style="display: inline-block; margin:10px;">
 <app-salon-first></app-salon-first>
 </div>
 <div style="display: inline-block; margin:10px;">
 <app-salon-second></app-salon-second>
+</div>
 </div>

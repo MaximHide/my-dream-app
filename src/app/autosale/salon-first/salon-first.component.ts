@@ -9,14 +9,15 @@ import {GetDataService} from '../service/get-data.service';
   styleUrls: ['./salon-first.component.css']
 })
 export class SalonFirstComponent implements OnInit {
-  salons: Salon[] = [];
-
-
-
+  carName: Car[] = [];
   constructor(public service: GetDataService) { }
 
   ngOnInit() {
-    this.salons = this.service.getAllSalons();
+    this.carName = this.service.getCarsForSalon(1);
   }
+
+returnCars(salon) {
+    this.service.returnCars(salon);
+}
 
 }

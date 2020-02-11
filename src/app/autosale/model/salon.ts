@@ -3,7 +3,7 @@ import {Car} from './car';
 export class Salon {
 salonId: number;
 salonAddress: string;
-carName: Car[];
+carName: Car[] = [];
 
 
   constructor(salonId: number, salonAddress: string) {

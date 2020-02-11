@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Car} from '../model/car';
 import {Salon} from '../model/salon';
 
@@ -6,8 +6,10 @@ import {Salon} from '../model/salon';
   providedIn: 'root'
 })
 export class GetDataService {
-  private listOfCars: Car[] = [];
-  private listOfSalons: Salon[] = [];
+  listOfCars: Car[] = [];
+  listOfSalons: Salon[] = [];
+  currentCar: Car[];
+  carsForSalon: Car[] = [];
 
   constructor() {
     const carOne = new Car(1, 'bmw', 1000, 'red');
@@ -43,11 +45,34 @@ export class GetDataService {
     return this.listOfSalons;
   }
 
-  pushCarToSalon(car: Car, listOfSalons) {
+
+  pushCarToSalon(car: Car, salonNumber) {
+    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.listOfSalons.length; i++) {
-      if (this.listOfSalons[i].salonId === listOfSalons) {
+      if (this.listOfSalons[i].salonId === salonNumber) {
         this.listOfSalons[i].carName.push(car);
       }
     }
   }
+
+  getCarsForSalon(salonNumber) {
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.listOfSalons.length; i++) {
+      if (this.listOfSalons[i].salonId === salonNumber) {
+        return this.listOfSalons[i].carName;
+      }
+    }
+  }
+
+
+  returnCars(salonNumber) {
+    this.carsForSalon = this.getCarsForSalon(salonNumber);
+    for (let i = 0; i < this.carsForSalon.length; i++) {
+      this.currentCar = this.carsForSalon.splice(i, 1);
+      i--;
+      this.listOfCars.push(this.currentCar[0]);
+
+    }
+  }
+
 }

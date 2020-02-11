@@ -18,4 +18,9 @@ export class GeneralComponent implements OnInit {
     this.salons = this.service.getAllSalons();
   }
 
+  addCarToSalon(car: Car, salon, row) {
+    this.service.pushCarToSalon(car, salon);
+    this.cars.splice(row, 1);
+  }
+
 }
