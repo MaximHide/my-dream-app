@@ -8,9 +8,9 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 export class ParentComponent implements OnInit {
 
   dataChange: boolean;
-  parentData: string;
+  @Input() parentData: string;
   @Output() statusBtn: boolean;
-  parentBtn: boolean;
+  @Input() parentBtn: boolean;
 
   constructor() {
     this.dataChange = false;
