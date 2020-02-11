@@ -1,0 +1,53 @@
+
+<!--<div appMyDirective>TEST DIRECTIVE</div>-->
+<div  align="center" style="margin-top: 50px">
+
+  <!--<input [(ngModel)]="filter">{{filter}}-->
+
+
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Money</th>
+      <th>Address</th>
+      <th>№</th>
+    </tr>
+    </thead>
+
+    <!--[ngClass]="{trueClass:person.name==='Amigo'}"-->
+    <!--[ngClass]="{trueClass:person.name==='Amigo', falseClass: person.name!=='Amigo'}"-->
+
+    <!--[ngStyle]=" person.age < 20 && {'font-size.px':24}"-->
+
+    <!--| uppercase-->
+    <!--| lowercase-->
+    <!--currency:"USD"-->
+    <!--percent-->
+
+    <!--<tr *ngFor="let person of list | myPipe:'Amigo'; index as i">-->
+
+    <!--<tr *ngFor="let person of list | myPipe:filter; index as i">-->
+
+    <tbody>
+    <tr *ngFor="let person of list; index as i">
+      <td>{{person.name}}</td>
+      <td>{{person.age}}</td>
+      <td>{{person.money}}</td>
+      <td>{{person.address}}</td>
+      <td>{{i}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!--<mat-grid-list [cols]="4" gutterSize="2px" [rowHeight]="40">-->
+  <!--<mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: red"></mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: yellow"></mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="4" [rowspan]="1" style="background-color: green"></mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="2" [rowspan]="2" style="background-color: blue"></mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="1" [rowspan]="2" style="background-color: cadetblue"></mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="1" [rowspan]="2" style="background-color: black"></mat-grid-tile>-->
+
+
+<!--</mat-grid-list>-->

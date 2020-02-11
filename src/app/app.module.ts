@@ -9,6 +9,7 @@ import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonToggleModule} from '@angular/material';
 import {MyModuleModule} from './all-directives/my-module.module';
+import {MyModuleTwoModule} from './own-directive-pipes/my-module-two.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MyModuleModule} from './all-directives/my-module.module';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonToggleModule,
-    MyModuleModule
+    MyModuleModule,
+    MyModuleTwoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
