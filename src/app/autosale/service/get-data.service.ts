@@ -10,6 +10,9 @@ export class GetDataService {
   listOfSalons: Salon[] = [];
   currentCar: Car[];
   carsForSalon: Car[] = [];
+  tempCommonPrice;
+  commonPrice1;
+  commonPrice2;
 
   constructor() {
     const carOne = new Car(1, 'bmw', 1000, 'red');
@@ -71,6 +74,27 @@ export class GetDataService {
       this.currentCar = this.carsForSalon.splice(i, 1);
       i--;
       this.listOfCars.push(this.currentCar[0]);
+    }
+    if (salonNumber === 1) {
+      this.commonPrice1 = null;
+    } else {
+      this.commonPrice2 = null;
+    }
+  }
+
+  sumPrice(salonNumber) {
+    this.carsForSalon = this.getCarsForSalon(salonNumber);
+    this.tempCommonPrice = 0;
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.carsForSalon.length; i++) {
+      console.log(this.carsForSalon[i].carPrice.valueOf());
+      this.tempCommonPrice = this.tempCommonPrice + this.carsForSalon[i].carPrice.valueOf();
+      console.log(this.tempCommonPrice);
+    }
+    if (salonNumber === 1) {
+      return this.commonPrice1 = this.tempCommonPrice;
+    } else {
+      return this.commonPrice2 = this.tempCommonPrice;
 
     }
   }

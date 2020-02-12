@@ -23,4 +23,5 @@ export class GeneralComponent implements OnInit {
     this.cars.splice(row, 1);
   }
 
+
 }

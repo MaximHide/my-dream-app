@@ -19,5 +19,4 @@ export class SalonFirstComponent implements OnInit {
 returnCars(salon) {
     this.service.returnCars(salon);
 }
-
 }
