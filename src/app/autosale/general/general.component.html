@@ -6,6 +6,9 @@
 </div>
 
 <div *ngIf="cars.length>0">
+  <button style="margin:10px;" (click)="service.changeCurrency('USD')">USD <br> exchangeRate: {{service.exchangeRateUSD}}</button>
+  <button style="margin:10px;" (click)="service.changeCurrency('EUR')">EUR <br> exchangeRate: {{service.exchangeRateEUR}}</button>
+  <button style="margin:10px;" (click)="service.changeCurrency('GBP')">GBP <br> exchangeRate: {{service.exchangeRateGBP}}</button>
 <table border="1">
   <thead>
   <tr>
@@ -21,7 +24,7 @@
   <tr *ngFor="let car of cars; index as i" [carColor] = "car.carColor" appAutosale>
     <td>{{car.carId}}</td>
     <td>{{car.carModel}}</td>
-    <td>{{car.carPrice}}</td>
+    <td>{{car.carPrice | autosale: service.currentCurrency: service.currentExchangeRate}}</td>
     <td>{{car.carColor}}</td>
     <td>
       <button style="margin:10px;" (click)="addCarToSalon(car, 1, i); service.sumPrice(1)">add to First</button>

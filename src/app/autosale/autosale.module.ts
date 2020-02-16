@@ -6,11 +6,12 @@ import { SalonSecondComponent } from './salon-second/salon-second.component';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import { AutosaleDirective } from './autosale.directive';
+import { AutosalePipe } from './autosale.pipe';
 
 
 
 @NgModule({
-  declarations: [GeneralComponent, SalonFirstComponent, SalonSecondComponent, AutosaleDirective],
+  declarations: [GeneralComponent, SalonFirstComponent, SalonSecondComponent, AutosaleDirective, AutosalePipe],
   exports: [
     GeneralComponent
   ],

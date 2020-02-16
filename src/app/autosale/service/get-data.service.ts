@@ -13,6 +13,11 @@ export class GetDataService {
   tempCommonPrice;
   commonPrice1;
   commonPrice2;
+  currentCurrency = 'USD';
+  currentExchangeRate = 1;
+  exchangeRateUSD = 1;
+  exchangeRateEUR = 2.67;
+  exchangeRateGBP = 3.23;
 
   constructor() {
     const carOne = new Car(1, 'bmw', 1000, 'red');
@@ -98,5 +103,16 @@ export class GetDataService {
 
     }
   }
+
+  changeCurrency(currencyName: string) {
+    this.currentCurrency = currencyName;
+    if (currencyName === 'EUR') {
+        this.currentExchangeRate = this.exchangeRateEUR;
+      } else if (currencyName === 'USD') {
+      this.currentExchangeRate = this.exchangeRateUSD;
+    } else  if (currencyName === 'GBP') {
+      this.currentExchangeRate = this.exchangeRateGBP;
+    }
+}
 
 }
