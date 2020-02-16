@@ -9,6 +9,7 @@ import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonToggleModule} from '@angular/material';
 import {AutosaleModule} from "./autosale/autosale.module";
+import {TestGridModule} from "./test-grid/test-grid.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {AutosaleModule} from "./autosale/autosale.module";
     FormsModule,
     BrowserAnimationsModule,
     MatButtonToggleModule,
-    AutosaleModule
+    AutosaleModule,
+    TestGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
