@@ -18,12 +18,12 @@ export class GetDataService {
     const carOne = new Car(1, 'bmw', 1000, 'red');
     const carTwo = new Car(2, 'dodge', 4500, 'green');
     const carThree = new Car(3, 'kia', 3000, 'navy');
-    const carFour = new Car(4, 'hyundai', 2000, 'red');
-    const carFive = new Car(5, 'renault', 1000, 'white');
-    const carSix = new Car(6, 'nissan', 4000, 'black');
+    const carFour = new Car(4, 'hyundai', 2000, 'yellow');
+    const carFive = new Car(5, 'renault', 1000, 'navy');
+    const carSix = new Car(6, 'nissan', 4000, 'yellow');
     const carSeven = new Car(7, 'chevrolet', 10000, 'red');
-    const carEight = new Car(8, 'mercedes', 1200, 'pink');
-    const carNine = new Car(9, 'fiat', 400, 'yellow');
+    const carEight = new Car(8, 'mercedes', 1200, 'green');
+    const carNine = new Car(9, 'fiat', 400, 'navy');
     this.listOfCars.push(carOne);
     this.listOfCars.push(carTwo);
     this.listOfCars.push(carThree);

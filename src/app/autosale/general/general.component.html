@@ -5,7 +5,6 @@
   I am a cool angular developer.
 </div>
 
-
 <div *ngIf="cars.length>0">
 <table border="1">
   <thead>
@@ -19,7 +18,7 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let car of cars; index as i">
+  <tr *ngFor="let car of cars; index as i" [carColor] = "car.carColor" appAutosale>
     <td>{{car.carId}}</td>
     <td>{{car.carModel}}</td>
     <td>{{car.carPrice}}</td>
