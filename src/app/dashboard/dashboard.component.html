@@ -4,3 +4,7 @@
   <mat-list-item routerLink="/componentMain">Main part</mat-list-item>
   <mat-list-item routerLink="/new-module-redirect">New Module</mat-list-item>
 </mat-list>
+
+
+<button mat-raised-button color="primary" (click)="redirectByButton()">RegirectByButtonToFirstPartWithQueryParams</button>
+<button mat-raised-button color="primary" [routerLink]="['routerwithid', '8']">RedirectWithId</button>

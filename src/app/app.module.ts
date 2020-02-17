@@ -12,11 +12,12 @@ import {MyModuleModule} from './all-directives/my-module.module';
 import {MyModuleTwoModule} from './own-directive-pipes/my-module-two.module';
 import {NoRoutComponent} from './shared/no-rout/no-rout.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {ComponentwithidComponent} from './componentwithid/componentwithid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoRoutComponent, DashboardComponent
+    NoRoutComponent, DashboardComponent, ComponentwithidComponent
   ],
   imports: [
     BrowserModule,

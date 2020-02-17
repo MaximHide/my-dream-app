@@ -9,14 +9,18 @@ const routes: Routes = [
   {
     path: '', component: FirstComponentComponent, children: [
       {path: 'second', component: SecondComponentComponent},
-      {path: 'third', component: ThirdComponentComponent}
+      {path: 'third', component: ThirdComponentComponent},
+      {path: 'redirectShow', redirectTo: 'third', pathMatch: 'full'},
     ],
   },
-  {path: 'fourth', component: FourthComponentComponent, children: [
   {
-    path: 'new-module-redirect-second-laysy',
-    loadChildren: () => import('../for-routing-examples-second-laysy/for-routing-examples-second-laysy.module').then(m => m.ForRoutingExamplesSecondLaysyModule)},
-]}
+    path: 'fourth', component: FourthComponentComponent, children: [
+      {
+        path: 'new-module-redirect-second-laysy',
+        loadChildren: () => import('../for-routing-examples-second-laysy/for-routing-examples-second-laysy.module').then(m => m.ForRoutingExamplesSecondLaysyModule)
+      },
+    ]
+  }
 ];
 
 

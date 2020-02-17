@@ -5,6 +5,7 @@ import {ParentTwoComponent} from './all-directives/parent/parent-two.component';
 import {ComponentMainComponent} from './own-directive-pipes/component-main/component-main.component';
 import {NoRoutComponent} from './shared/no-rout/no-rout.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {ComponentwithidComponent} from './componentwithid/componentwithid.component';
 
 
 const routes: Routes = [
@@ -12,9 +13,11 @@ const routes: Routes = [
   {path: 'parent', component: ParentComponent},
   {path: 'parent-two', component: ParentTwoComponent},
   {path: 'componentMain', component: ComponentMainComponent},
+  {path: 'routerwithid/:id', component: ComponentwithidComponent},
   {
     path: 'new-module-redirect',
-    loadChildren: () => import('./for-routing-examples/for-routing-examples.module').then(m => m.ForRoutingExamplesModule)},
+    loadChildren: () => import('./for-routing-examples/for-routing-examples.module').then(m => m.ForRoutingExamplesModule)
+  },
   {path: '**', component: NoRoutComponent},
 ];
 
