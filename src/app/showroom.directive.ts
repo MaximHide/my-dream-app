@@ -1,17 +1,44 @@
-import {Directive} from '@angular/core';
+import {Directive, ElementRef, HostListener, Input, Renderer, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[appShowroom]'
 })
 export class ShowroomDirective {
-  constructor() {
+  @Input() color;
+  oldColor;
 
+
+  constructor(private el: ElementRef, private render: Renderer2) {
+    this.oldColor = this.color;
   }
 
-  // constructor(private el, private renderer: Renderer) {
-  //
-  //   el.nativeElement.style.backgroundColor = 'red';
-  //
-  //   // renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gray');
-  // }
+
+  @HostListener('mouseenter') inRow() {
+    this.render.setStyle(this.el.nativeElement, 'backgroundColor', this.color);
+  }
+
+  @HostListener('mouseleave') outRow() {
+    this.render.setStyle(this.el.nativeElement, 'backgroundColor', 'white');
+  }
+
+  @HostListener('click') changeColor() {
+
+    console.log('color = ' + this.color);
+    switch (this.color) {
+      case('red'):
+        this.color = 'black';
+        break;
+      case('blue'):
+        this.color = 'orange';
+        break;
+      case ('green'):
+        this.color = 'red';
+        break;
+      case('yellow'):
+        this.color = 'blue';
+        break;
+    }
+    this.render.setStyle(this.el.nativeElement, 'backgroundColor', this.color);
+  }
+
 }

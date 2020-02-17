@@ -8,6 +8,7 @@ import {ShowRoom} from './model/ShowRoom';
 export class ShowroomService {
   car: Array<Car> = [];
   showroom: Array<ShowRoom> = [];
+  currency;
 
   constructor() {
     this.showroom.push(new ShowRoom('1', 'Moskovsky ave'));
@@ -39,6 +40,10 @@ export class ShowroomService {
         return this.showroom[i];
       }
     }
+  }
+
+  updateCurrency(currency: string) {
+    this.currency = currency;
   }
 
 }

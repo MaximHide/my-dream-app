@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonToggleModule} from '@angular/material';
 import {ShowroomModule} from './carShowRoom/showroom.module';
 import {ShowroomService} from './carShowRoom/showroom.service';
-import {ShowroomDirective} from './showroom.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import {ShowroomDirective} from './showroom.directive';
     BrowserAnimationsModule,
     MatButtonToggleModule,
     ShowroomModule,
-    // ShowroomDirective
   ],
   providers: [ShowroomService],
   bootstrap: [AppComponent]

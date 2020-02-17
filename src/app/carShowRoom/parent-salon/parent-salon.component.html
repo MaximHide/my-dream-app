@@ -1,11 +1,13 @@
 <p>parent-salon works!</p>
-
-<table border=2   *ngIf="car.length>0">
-  <tr *ngFor="let cars of car; index as i">
+<button mat-raised-button color="accent" (click)="setCurrency('usd')">USD</button>
+<button mat-raised-button color="accent" (click)="setCurrency('eur')">EUR</button>
+<button mat-raised-button color="accent" (click)="setCurrency('gbp')">GBP</button>
+<table border=2 *ngIf="car.length>0">
+  <tr *ngFor="let cars of car; index as i" [color]="cars.color" appShowroom>
     <td>{{cars.id}}</td>
     <td>{{cars.model}}</td>
     <td>{{cars.color}}</td>
-    <td>{{cars.amount}}</td>
+    <td>{{cars.amount | changeCurrency: this.service.currency}}</td>
     <button mat-raised-button color="warn" (click)="setCarInSalon(cars, '1', i)">to salon A</button>
     <button mat-raised-button color="primary" (click)="setCarInSalon(cars, '2', i)">to salon B</button>
   </tr>
