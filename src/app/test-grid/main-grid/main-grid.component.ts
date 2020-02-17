@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-grid.component.css']
 })
 export class MainGridComponent implements OnInit {
-  gridColor = 'red';
 
   constructor() { }
 
