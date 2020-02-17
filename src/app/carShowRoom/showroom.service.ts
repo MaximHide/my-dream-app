@@ -17,7 +17,7 @@ export class ShowroomService {
   getAllCar(): Car[] {
     this.car.push(new Car('1', 'tesla', 3000, 'red'));
     this.car.push(new Car('2', 'ferrari', 40000, 'yellow'));
-    this.car.push(new Car('3', 'chevrolet', 100, 'white'));
+    this.car.push(new Car('3', 'chevrolet', 100, 'green'));
     this.car.push(new Car('4', 'audi', 3200, 'black'));
     this.car.push(new Car('5', 'BMW', 3200, 'blue'));
     this.car.push(new Car('6', 'Zhiguli', 0, 'undifine'));
