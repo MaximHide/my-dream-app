@@ -1,18 +1,18 @@
 <!--<p>parent works!</p>-->
+<!---->
 
 
+{{field}}<br>
+<button (click)="getDataFromButton(true)">Press button</button>
 
-<!--{{field}}<br>-->
-<!--<button (click)="getDataFromButton(true)">Press button</button>-->
-
-<!--<input [(ngModel)]="field">-->
+<input [(ngModel)]="field">
 
 
-<!--<button [style.color]="color" (click)="changeColor()">My button</button>-->
+<button [style.color]="color" (click)="changeColor()">My button</button>
 
 <br>
 Parent Html
 <br>
 <button (click)="changeDataParentField()">My Parent button</button>
-<!--<app-child [childField]="parentField"></app-child>-->
+<app-child [childField]="parentField"></app-child>
 <app-child (childOutput) = "getEventFromChild($event)"></app-child>

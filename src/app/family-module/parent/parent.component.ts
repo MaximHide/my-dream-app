@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-parent',
+  selector: 'app-family-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })

@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {ChildComponent} from '../family-module/child/child.component';
 import {ParentComponent} from '../family-module/parent/parent.component';
-import {FormsModule} from "@angular/forms";
-
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../material.module';
 
 
 
@@ -14,11 +14,12 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     ChildComponent,
     ParentComponent
   ]
 })
-export class FamilyModule { }
+export class FamilyModule {}

@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import { AutosaleDirective } from './autosale.directive';
 import { AutosalePipe } from './autosale.pipe';
+import {AppRoutingModule} from '../app-routing.module';
 
 
 
@@ -18,7 +19,8 @@ import { AutosalePipe } from './autosale.pipe';
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ]
 })
 export class AutosaleModule { }
