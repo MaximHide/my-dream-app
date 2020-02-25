@@ -1,0 +1,16 @@
+<p>car-list works!</p>
+<table border="1">
+  <thead>
+  <tr>
+    <th>carId</th>
+    <th>carModel</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr class="clickable" *ngFor="let car of cars" [routerLink]="['./', car.carId]">
+    <td>{{car.carId}}</td>
+    <td>{{car.carModel}}</td>
+  </tr>
+  </tbody>
+</table>

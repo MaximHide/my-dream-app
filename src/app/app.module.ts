@@ -13,6 +13,7 @@ import {TestGridModule} from './test-grid/test-grid.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {FamilyModule} from './family-module/family.module';
 import { NoRoutComponent } from './no-rout/no-rout.component';
+import {CarModule} from './car/car.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NoRoutComponent } from './no-rout/no-rout.component';
     AutosaleModule,
     TestGridModule,
     DirectiveModule,
-    FamilyModule
+    FamilyModule,
+    CarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
